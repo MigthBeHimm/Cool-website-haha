@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Completion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .task {
+            margin: 20px 0;
+        }
+
+        .task a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 18px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .task a:hover {
+            background-color: #0056b3;
+        }
+
+        .task button {
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .task button:hover {
+            background-color: #218838;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #destination {
+            margin-top: 30px;
+        }
+
+        #destination a {
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff6600;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        #destination a:hover {
+            background-color: #cc5200;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Complete All Tasks to Proceed</h1>
+
+    <div class="task" id="task1">
+        <p>Task 1: <a href="https://linkvertise.com/task1" target="_blank">Go to Task 1</a></p>
+        <button onclick="completeTask(1)">Mark Task 1 as Completed</button>
+    </div>
+
+    <div class="task hidden" id="task2">
+        <p>Task 2: <a href="https://linkvertise.com/task2" target="_blank">Go to Task 2</a></p>
+        <button onclick="completeTask(2)">Mark Task 2 as Completed</button>
+    </div>
+
+    <div class="task hidden" id="task3">
+        <p>Task 3: <a href="https://linkvertise.com/task3" target="_blank">Go to Task 3</a></p>
+        <button onclick="completeTask(3)">Mark Task 3 as Completed</button>
+    </div>
+
+    <div class="task hidden" id="task4">
+        <p>Task 4: <a href="https://linkvertise.com/task4" target="_blank">Go to Task 4</a></p>
+        <button onclick="completeTask(4)">Mark Task 4 as Completed</button>
+    </div>
+
+    <div class="task hidden" id="task5">
+        <p>Task 5: <a href="https://linkvertise.com/task5" target="_blank">Go to Task 5</a></p>
+        <button onclick="completeTask(5)">Mark Task 5 as Completed</button>
+    </div>
+
+    <div id="destination" class="hidden">
+        <a href="https://finaldestination.com" target="_blank">Go to Final Destination</a>
+    </div>
+
+    <script>
+        function completeTask(taskNumber) {
+            document.getElementById('task' + taskNumber).classList.add('hidden');
+            
+            if (taskNumber < 5) {
+                document.getElementById('task' + (taskNumber + 1)).classList.remove('hidden');
+            } else {
+                document.getElementById('destination').classList.remove('hidden');
+            }
+        }
+    </script>
+
+
+</body></html>
